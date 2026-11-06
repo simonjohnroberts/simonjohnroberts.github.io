@@ -14,7 +14,7 @@ const BOID_COUNT = 40;
 const MAX_SPEED = 0.3; // slow it dooooowwwwwwnnnn
 const MAX_FORCE = 0.02;
 const PERCEPTION_RADIUS = 90;     // Up from 75
-const CONNECTION_DISTANCE = 170;  // Up from 110 (creates longer data connections)
+const CONNECTION_DISTANCE = 172;  // Up from 110 (creates longer data connections)
 
 
 class Node {
