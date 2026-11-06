@@ -67,6 +67,33 @@
         text-decoration: underline;
       }
 
+      /* boid stuff */
+
+      /* 1. Reset the outer bounding container */
+      /* Ensure the main hero section acts as the relative master box */
+      .my-flock-background {
+        position: relative;
+        overflow: hidden;
+        background-color: #000000;
+        }
+
+        /* Pin the canvas directly behind Bulma's layouts */
+        #flockCanvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1; /* Layer 1: Background */
+        pointer-events: none;
+        }
+
+        /* Force Bulma's body to sit on top of the animation layer */
+        .my-flock-background .hero-body {
+        position: relative;
+        z-index: 2; /* Layer 2: Text on top */
+        }
+
     </style>
   </head>
   <body>
@@ -90,24 +117,34 @@
           <div class="info-subtitle">TO FOLLOW :)</div>
         </div>
       </div>
+  
       <!-- main title: begin -->
-      <section class="hero is-medium">
+      <section class="hero is-medium my-flock-background">
+        
+        <!-- To help my brain remember... 1. The Canvas sits at the very root of the section as a background layer -->
+        <canvas id="flockCanvas"></canvas> 
+
+        <!-- 2. Bulma's native layouts sit entirely on top of it -->
         <div class="hero-body">
           <div class="container" data-aos="fade-up">
             <div class="columns">
-              <div class="column is-three-fifths">
+              
+              <!-- Changed to 'is-four-fifths' or 'is-full' if you want maximum runway for "Hello World" -->
+              <div class="column is-four-fifths">
                 <p class="title is-1">
                     Hello world...
                 </p>
                 <p class="subtitle is-3">
                   My name is Simon and I'm a Creative Director and Associate Lecturer based in London. I lead UX across teams, products and disciplines to embed design thinking and deliver results-driven digital products.
                 </p>
-              </div>
+              </div>    
+
             </div>
           </div>
         </div>
       </section>
-      <!-- main title: end -->  
+      <!-- main title: end -->
+
     </div>
   </section>
     <!-- intro section: begin -->
@@ -146,5 +183,6 @@
   <script>
     AOS.init();
   </script>
+    <script src="flock.js"></script>
   </body>
 </html>
