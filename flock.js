@@ -11,7 +11,7 @@ window.addEventListener("resize", resizeCanvas);
 
 // Configuration - Perfected for a slow, premium data-network grid
 const BOID_COUNT = 40;
-const MAX_SPEED = 1; // Kept your excellent relaxed speed choice
+const MAX_SPEED = 0.3; // slow it dooooowwwwwwnnnn
 const MAX_FORCE = 0.02;
 const PERCEPTION_RADIUS = 90;     // Up from 75
 const CONNECTION_DISTANCE = 170;  // Up from 110 (creates longer data connections)
